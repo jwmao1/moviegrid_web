@@ -1,6 +1,6 @@
 # StoryGrid Project Website
 
-Official project website for **StoryGrid: Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation**.
+project website for **StoryGrid: Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation**.
 
 ## Website
 
