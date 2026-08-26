@@ -1,6 +1,6 @@
 const data = window.MGPT_DATA;
 
-const githubMediaRoot = "https://media.githubusercontent.com/media/jwmao1/storygrid_web/master/";
+const githubMediaRoot = "https://raw.githubusercontent.com/jwmao1/storygrid_web/master/";
 
 function resolveVideoSource(src) {
   if (location.hostname === "jwmao1.github.io" && src.startsWith("assets/videos/")) {
