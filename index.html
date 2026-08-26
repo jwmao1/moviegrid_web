@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="StoryGrid: Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation" />
+    <title>StoryGrid — Multi-Grid Post-Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260815-54" />
+  </head>
+  <body>
+    <main id="top">
+      <section class="hero wrap">
+        <h1>StoryGrid</h1>
+        <p class="hero-subtitle">Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation</p>
+        <div class="authors">
+          <span><a href="https://jwmao1.github.io/mjw/" target="_blank" rel="noopener noreferrer">Jiawei Mao<sup>1</sup></a></span>
+          <span><a href="https://g-h-chen.github.io/" target="_blank" rel="noopener noreferrer">Hardy Chen<sup>1</sup></a></span>
+          <span><a href="https://www.haqtu.me/" target="_blank" rel="noopener noreferrer">Haoqin Tu<sup>1</sup></a></span>
+          <span><a href="https://scholar.google.com/citations?user=Bo9xeqMAAAAJ" target="_blank" rel="noopener noreferrer">Yuhan Wang<sup>1</sup></a></span>
+          <span><a href="https://lab-smile.github.io/" target="_blank" rel="noopener noreferrer">Ruogu Fang<sup>2</sup></a></span>
+          <span><a href="https://scholar.google.com/citations?user=m6Q6u2MAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Wei Shao<sup>2</sup></a></span>
+          <span><a href="https://cihangxie.github.io/" target="_blank" rel="noopener noreferrer">Cihang Xie<sup>1</sup></a></span>
+          <span><a href="https://yuyinzhou.github.io/" target="_blank" rel="noopener noreferrer">Yuyin Zhou<sup>1</sup></a></span>
+        </div>
+        <p class="affiliations">
+          <sup>1</sup><a href="https://ucsc-vlaa.github.io/index.html" target="_blank" rel="noopener noreferrer">UC Santa Cruz</a>
+          &nbsp;&nbsp;
+          <sup>2</sup><a href="https://www.ufl.edu/" target="_blank" rel="noopener noreferrer">University of Florida</a>
+        </p>
+        <div class="links" aria-label="Project links">
+          <a href="#" class="pill muted" title="Replace this link when the paper is public">Paper · coming soon</a>
+          <a href="https://github.com/jwmao1/storygrid" class="pill" target="_blank" rel="noopener noreferrer">Code</a>
+          <a href="https://huggingface.co/JiaMao/StoryGrid" class="pill" target="_blank" rel="noopener noreferrer">Model</a>
+        </div>
+      </section>
+
+      <header class="site-header">
+        <nav aria-label="Page sections">
+          <a href="#abstract">Abstract</a>
+          <a href="#mglv">MGLV</a>
+          <a href="#grid-16">16-Grid</a>
+          <a href="#grid-64">Grid Scaling</a>
+          <a href="#comparison">Comparison</a>
+          <a href="#continuation">Continuation</a>
+          <a href="#diverse">Diverse</a>
+        </nav>
+      </header>
+
+      <section class="feature-video wrap" aria-label="StoryGrid showcase video">
+        <div id="hero-video" class="media-slot media-slot--hero"></div>
+      </section>
+
+      <section id="abstract" class="section narrow">
+        <div class="section-kicker">Overview</div>
+        <h2>Abstract</h2>
+        <p class="abstract-copy">Generating long-form multi-shot videos requires temporally coherent motion within each shot and visually consistent transition across many shots. However, most existing video generators are biased toward preserving continuous motion over presenting the full shot sets, and packing an entire multi-shot narrative along a single temporal axis (i.e., Temporal Packing) reinforces the bias. This motivates decomposing a long video generation into producing shorter video chunks, so that each temporal axis handles fewer shots and thus better model continuous motion. Since independently generated video chunks cannot directly establish consistent narratives, we arrange them on a spatial grid for joint modeling. We therefore propose <strong>StoryGrid</strong>, a Multi-Grid Post-Training paradigm for long-form multi-shot video generation. To support this paradigm, we construct the Multi-Grid Long Video (MGLV) dataset from 1,000 long-form videos through Source Video Collection, Hierarchical Video Segmentation, Grid Video Construction, and Character-Aware Story Annotation, yielding 54K grid videos paired with video story prompts. To model the grid-structure learning and enhance the video continuation, our Noise-Free Random-Grid Training retains a random subset of video chunks in the grid as clean visual context to guide the denoising of the remaining video chunks. Furthermore, we employ the Grid Embedding encodes specific video grid spatial information, the character-aware Story Prompt links shared entities across video chunks, and the Grid Boundary Loss stabilizes the grid structure. Under the same token budget, our StoryGrid generates 6.05&times; more video shots than the Temporal Packing baseline in a 1,616-frame video. Compared with other methods, StoryGrid achieves state-of-the-art intra-shot consistency (0.9131 vs. 0.8086 for HoloCine) and inter-shot consistency (0.5914 vs. 0.5384 for StoryMem) on our curated video benchmark spanning 5 real-world categories.</p>
+      </section>
+
+      <section id="mglv" class="section wrap">
+        <div class="section-heading">
+          <div><div class="section-kicker">Data construction</div><h2>MGLV Dataset</h2></div>
+          <p>Construction of the Multi-Grid Long Video dataset.</p>
+        </div>
+        <div id="mglv-grid" class="stack"></div>
+      </section>
+
+      <section id="grid-16" class="section wrap">
+        <div class="section-heading">
+          <div><div class="section-kicker">Scaling the grid</div><h2>16-Grid Video Generation</h2></div>
+          <p>Long-form multi-shot stories generated with a 4 × 4 video grid.</p>
+        </div>
+        <div id="grid16" class="video-grid two-col"></div>
+      </section>
+
+      <section id="grid-64" class="section wrap">
+        <div class="section-heading">
+          <div><div class="section-kicker">Scaling further</div><h2>Grid Scaling</h2></div>
+          <p>64-grid generations for qualitative review.</p>
+        </div>
+        <div id="grid64" class="video-grid two-col"></div>
+      </section>
+
+      <section id="comparison" class="section section-tint">
+        <div class="wrap">
+          <div class="section-heading">
+            <div><div class="section-kicker">Side by side</div><h2>Comparison</h2></div>
+            <p>Qualitative comparison across methods under matched prompts.</p>
+          </div>
+          <div id="comparison-root"></div>
+        </div>
+      </section>
+
+      <section id="continuation" class="section wrap">
+        <div class="section-heading">
+          <div><div class="section-kicker">Beyond generation</div><h2>Video Continuation</h2></div>
+          <p>StoryGrid extends a visual narrative while preserving subjects, settings, and story state.</p>
+        </div>
+        <div id="continuation-grid" class="video-grid two-col"></div>
+      </section>
+
+      <section id="diverse" class="section wrap">
+        <div class="section-heading">
+          <div><div class="section-kicker">Visual range</div><h2>Diverse Results</h2></div>
+          <p>A continuous sequence spanning diverse subjects, settings, and visual narratives.</p>
+        </div>
+        <div id="diverse-groups"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-inner"><span>StoryGrid</span><span>Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation</span></div>
+    </footer>
+
+    <script src="grid-16-generation-data.js?v=20260815-54"></script>
+    <script src="grid-16-extra-data.js?v=20260815-54"></script>
+    <script src="grid-scaling-data.js?v=20260815-54"></script>
+    <script src="video-display-order.js?v=20260815-54"></script>
+    <script src="video-continuation-data.js?v=20260815-54"></script>
+    <script src="diverse-results-data.js?v=20260815-54"></script>
+    <script src="data.js?v=20260826-57"></script>
+    <script src="comparison-multishot-data.js?v=20260815-54"></script>
+    <script src="script.js?v=20260826-58"></script>
+  </body>
+</html>
