@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="StoryGrid: Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation" />
-    <title>StoryGrid — Multi-Grid Post-Training</title>
+    <meta name="description" content="MovieGrid: Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation" />
+    <title>MovieGrid — Multi-Grid Post-Training</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -13,7 +13,7 @@
   <body>
     <main id="top">
       <section class="hero wrap">
-        <h1>StoryGrid</h1>
+        <h1>MovieGrid</h1>
         <p class="hero-subtitle">Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation</p>
         <div class="authors">
           <span><a href="https://jwmao1.github.io/mjw/" target="_blank" rel="noopener noreferrer">Jiawei Mao<sup>1</sup></a></span>
@@ -32,8 +32,8 @@
         </p>
         <div class="links" aria-label="Project links">
           <a href="#" class="pill muted" title="Replace this link when the paper is public">Paper · coming soon</a>
-          <a href="https://github.com/jwmao1/storygrid" class="pill" target="_blank" rel="noopener noreferrer">Code</a>
-          <a href="https://huggingface.co/JiaMao/StoryGrid" class="pill" target="_blank" rel="noopener noreferrer">Model</a>
+          <a href="https://github.com/jwmao1/moviegrid" class="pill" target="_blank" rel="noopener noreferrer">Code</a>
+          <a href="https://huggingface.co/JiaMao/MovieGrid" class="pill" target="_blank" rel="noopener noreferrer">Model</a>
         </div>
       </section>
 
@@ -49,14 +49,14 @@
         </nav>
       </header>
 
-      <section class="feature-video wrap" aria-label="StoryGrid showcase video">
+      <section class="feature-video wrap" aria-label="MovieGrid showcase video">
         <div id="hero-video" class="media-slot media-slot--hero"></div>
       </section>
 
       <section id="abstract" class="section narrow">
         <div class="section-kicker">Overview</div>
         <h2>Abstract</h2>
-        <p class="abstract-copy">Generating long-form multi-shot videos requires temporally coherent motion within each shot and visually consistent transition across many shots. However, most existing video generators are biased toward preserving continuous motion over presenting the full shot sets, and packing an entire multi-shot narrative along a single temporal axis (i.e., Temporal Packing) reinforces the bias. This motivates decomposing a long video generation into producing shorter video chunks, so that each temporal axis handles fewer shots and thus better model continuous motion. Since independently generated video chunks cannot directly establish consistent narratives, we arrange them on a spatial grid for joint modeling. We therefore propose <strong>StoryGrid</strong>, a Multi-Grid Post-Training paradigm for long-form multi-shot video generation. To support this paradigm, we construct the Multi-Grid Long Video (MGLV) dataset from 1,000 long-form videos through Source Video Collection, Hierarchical Video Segmentation, Grid Video Construction, and Character-Aware Story Annotation, yielding 54K grid videos paired with video story prompts. To model the grid-structure learning and enhance the video continuation, our Noise-Free Random-Grid Training retains a random subset of video chunks in the grid as clean visual context to guide the denoising of the remaining video chunks. Furthermore, we employ the Grid Embedding encodes specific video grid spatial information, the character-aware Story Prompt links shared entities across video chunks, and the Grid Boundary Loss stabilizes the grid structure. Under the same token budget, our StoryGrid generates 6.05&times; more video shots than the Temporal Packing baseline in a 1,616-frame video. Compared with other methods, StoryGrid achieves state-of-the-art intra-shot consistency (0.9131 vs. 0.8086 for HoloCine) and inter-shot consistency (0.5914 vs. 0.5384 for StoryMem) on our curated video benchmark spanning 5 real-world categories.</p>
+        <p class="abstract-copy">Generating long-form multi-shot videos requires temporally coherent motion within each shot and visually consistent transition across many shots. However, most existing video generators are biased toward preserving continuous motion over presenting the full shot sets, and packing an entire multi-shot narrative along a single temporal axis (i.e., Temporal Packing) reinforces the bias. This motivates decomposing a long video generation into producing shorter video chunks, so that each temporal axis handles fewer shots and thus better model continuous motion. Since independently generated video chunks cannot directly establish consistent narratives, we arrange them on a spatial grid for joint modeling. We therefore propose <strong>MovieGrid</strong>, a Multi-Grid Post-Training paradigm for long-form multi-shot video generation. To support this paradigm, we construct the Multi-Grid Long Video (MGLV) dataset from 1,000 long-form videos through Source Video Collection, Hierarchical Video Segmentation, Grid Video Construction, and Character-Aware Story Annotation, yielding 54K grid videos paired with video story prompts. To model the grid-structure learning and enhance the video continuation, our Noise-Free Random-Grid Training retains a random subset of video chunks in the grid as clean visual context to guide the denoising of the remaining video chunks. Furthermore, we employ the Grid Embedding encodes specific video grid spatial information, the character-aware Story Prompt links shared entities across video chunks, and the Grid Boundary Loss stabilizes the grid structure. Under the same token budget, our MovieGrid generates 6.05&times; more video shots than the Temporal Packing baseline in a 1,616-frame video. Compared with other methods, MovieGrid achieves state-of-the-art intra-shot consistency (0.9131 vs. 0.8086 for HoloCine) and inter-shot consistency (0.5914 vs. 0.5384 for StoryMem) on our curated video benchmark spanning 5 real-world categories.</p>
       </section>
 
       <section id="mglv" class="section wrap">
@@ -96,7 +96,7 @@
       <section id="continuation" class="section wrap">
         <div class="section-heading">
           <div><div class="section-kicker">Beyond generation</div><h2>Video Continuation</h2></div>
-          <p>StoryGrid extends a visual narrative while preserving subjects, settings, and story state.</p>
+          <p>MovieGrid extends a visual narrative while preserving subjects, settings, and story state.</p>
         </div>
         <div id="continuation-grid" class="video-grid two-col"></div>
       </section>
@@ -111,7 +111,7 @@
     </main>
 
     <footer>
-      <div class="wrap footer-inner"><span>StoryGrid</span><span>Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation</span></div>
+      <div class="wrap footer-inner"><span>MovieGrid</span><span>Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation</span></div>
     </footer>
 
     <script src="grid-16-generation-data.js?v=20260815-54"></script>
