@@ -32,11 +32,9 @@
 
   const grid64ByTitle = new Map(window.GRID_SCALING_DATA.map((item) => [item.title, item]));
   window.GRID_SCALING_DISPLAY_DATA = [
-  "case_030",
   "story_080",
   "story_076",
   "story_068",
-  "case_044",
   "story_053",
   "case_025",
   "story_060",
