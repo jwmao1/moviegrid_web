@@ -78,7 +78,7 @@ function mediaCard(item, options = {}) {
   video.playsInline = true;
   video.preload = options.hero ? "auto" : "metadata";
   video.controls = true;
-  video.setAttribute("aria-label", item.title || options.label || "StoryGrid video result");
+  video.setAttribute("aria-label", item.title || options.label || "MovieGrid video result");
 
   video.addEventListener("loadedmetadata", () => {
     if (video.videoWidth && video.videoHeight) {
@@ -258,7 +258,7 @@ function renderPairedComparison(index, title, items) {
   comparisonRoot.appendChild(section);
 }
 renderPairedComparison(2, "Temporal Packing vs Grid Packing", data.comparison.temporalPacking);
-renderPairedComparison(3, "VIC vs StoryGrid", data.comparison.vicVsMgpt);
+renderPairedComparison(3, "VIC vs MovieGrid", data.comparison.vicVsMgpt);
 
 const diverseRoot = document.getElementById("diverse-groups");
 diverseRoot.className = "video-grid three-col";

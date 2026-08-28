@@ -5,8 +5,8 @@
  */
 window.MGPT_DATA = {
   hero: {
-    src: "assets/videos/hero-storygrid-showcase-v16.mp4",
-    title: "StoryGrid long-form generation showcase"
+    src: "assets/videos/hero-moviegrid-showcase-v17.mp4",
+    title: "MovieGrid long-form generation showcase"
   },
 
   // The image occupies the first row; all following rows contain two videos.
@@ -124,17 +124,17 @@ window.MGPT_DATA = {
     // Two videos per row: Temporal Packing, then Grid Packing.
     temporalPacking: [
       { src: "assets/videos/comparison-temporal-grid/3dcgi_8-temporal-grid.mp4", method: "Temporal Packing" },
-      { src: "assets/videos/comparison-temporal-grid/3dcgi_8-grid.mp4", method: "Grid Packing (StoryGrid)", ours: true },
+      { src: "assets/videos/comparison-temporal-grid/3dcgi_8-grid.mp4", method: "Grid Packing (MovieGrid)", ours: true },
       { src: "assets/videos/comparison-temporal-grid/stopmotion_20-temporal-grid.mp4", method: "Temporal Packing" },
-      { src: "assets/videos/comparison-temporal-grid/stopmotion_20-grid.mp4", method: "Grid Packing (StoryGrid)", ours: true },
+      { src: "assets/videos/comparison-temporal-grid/stopmotion_20-grid.mp4", method: "Grid Packing (MovieGrid)", ours: true },
       { src: "assets/videos/comparison-temporal-grid/cinema_11-temporal-grid.mp4", method: "Temporal Packing" },
-      { src: "assets/videos/comparison-temporal-grid/cinema_11-grid.mp4", method: "Grid Packing (StoryGrid)", ours: true }
+      { src: "assets/videos/comparison-temporal-grid/cinema_11-grid.mp4", method: "Grid Packing (MovieGrid)", ours: true }
     ],
 
     // Two videos per row: VIC, then MGPT.
     vicVsMgpt: [
       { src: "assets/videos/comparison-vic-mgpt/vic.mp4", method: "VIC" },
-      { src: "assets/videos/comparison-vic-mgpt/mgpt.mp4", method: "StoryGrid", ours: true }
+      { src: "assets/videos/comparison-vic-mgpt/mgpt.mp4", method: "MovieGrid", ours: true }
     ]
   },
 

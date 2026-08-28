@@ -1,6 +1,6 @@
-# StoryGrid Project Website
+# MovieGrid Project Website
 
-project website for **StoryGrid: Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation**.
+project website for **MovieGrid: Multi-Grid Post-Training for Long-Form Multi-Shot Video Generation**.
 
 ## Website
 
@@ -18,7 +18,7 @@ python3 -m http.server 8000
 
 ## Project links
 
-- Code: <https://github.com/jwmao1/storygrid>
-- Model: <https://huggingface.co/JiaMao/StoryGrid>
+- Code: <https://github.com/jwmao1/moviegrid>
+- Model: <https://huggingface.co/JiaMao/MovieGrid>
 
 The web-ready videos are encoded at 1080p for reliable GitHub Pages delivery. The original research media is maintained separately.
