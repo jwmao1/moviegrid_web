@@ -6,7 +6,7 @@ project website for **MovieGrid: Multi-Grid Post-Training for Long-Form Multi-Sh
 
 The public website is available at:
 
-<https://jwmao1.github.io/storygrid_web/>
+<https://jwmao1.github.io/moviegrid_web/>
 
 ## Local preview
 
