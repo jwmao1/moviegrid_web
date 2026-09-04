@@ -2,8 +2,8 @@ const data = window.MGPT_DATA;
 
 const githubMediaRoot = "https://raw.githubusercontent.com/jwmao1/moviegrid_web/master/";
 
-function resolveVideoSource(src) {
-  if (location.hostname === "jwmao1.github.io" && src.startsWith("assets/videos/")) {
+function resolveVideoSource(src, preferLocal = false) {
+  if (!preferLocal && location.hostname === "jwmao1.github.io" && src.startsWith("assets/videos/")) {
     return `${githubMediaRoot}${src}`;
   }
   return src;
@@ -71,7 +71,7 @@ function mediaCard(item, options = {}) {
   shell.className = `media-shell${options.hero ? " media-shell--hero" : ""}`;
 
   const video = document.createElement("video");
-  video.src = resolveVideoSource(item.src);
+  video.src = resolveVideoSource(item.src, options.hero);
   video.muted = true;
   video.autoplay = true;
   video.loop = !options.hero;
