@@ -5,7 +5,7 @@
  */
 window.MGPT_DATA = {
   hero: {
-    src: "assets/videos/hero-moviegrid-showcase-v20.mp4",
+    src: "assets/videos/hero-moviegrid-showcase-v21.mp4",
     title: "MovieGrid long-form generation showcase"
   },
 
