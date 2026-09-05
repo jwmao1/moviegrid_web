@@ -88,7 +88,7 @@ function mediaCard(item, options = {}) {
 
   const placeholder = document.createElement("div");
   placeholder.className = "media-placeholder";
-  placeholder.innerHTML = `<span class="play-mark">▶</span><strong>${item.title || "Video result"}</strong><small>${item.src}</small>`;
+  placeholder.innerHTML = '<span class="play-mark">▶</span><strong>Video Results</strong>';
 
   video.addEventListener("loadeddata", () => {
     shell.classList.add("has-video");
