@@ -38,6 +38,9 @@ const videoPlaybackObserver = new IntersectionObserver((entries) => {
     const video = entry.target;
     if (entry.isIntersecting) {
       visibleVideos.add(video);
+      if (!video.getAttribute("src") && video.dataset.src) {
+        video.src = video.dataset.src;
+      }
       video.preload = "auto";
       if (video.networkState === HTMLMediaElement.NETWORK_EMPTY) video.load();
       safePlay(video);
@@ -71,12 +74,14 @@ function mediaCard(item, options = {}) {
   shell.className = `media-shell${options.hero ? " media-shell--hero" : ""}`;
 
   const video = document.createElement("video");
-  video.src = resolveVideoSource(item.src);
+  const videoSource = resolveVideoSource(item.src);
+  video.dataset.src = videoSource;
+  if (options.hero) video.src = videoSource;
   video.muted = true;
   video.autoplay = true;
   video.loop = !options.hero;
   video.playsInline = true;
-  video.preload = options.hero ? "auto" : "metadata";
+  video.preload = options.hero ? "auto" : "none";
   video.controls = true;
   video.setAttribute("aria-label", item.title || options.label || "MovieGrid video result");
 
