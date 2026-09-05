@@ -1,6 +1,6 @@
 const data = window.MGPT_DATA;
 
-const githubMediaRoot = "https://raw.githubusercontent.com/jwmao1/moviegrid_web/e7e611749e216f6c1fd575fd994e34ccbafdec04/";
+const githubMediaRoot = "https://raw.githubusercontent.com/jwmao1/moviegrid_web/master/";
 
 function resolveVideoSource(src, preferLocal = false) {
   if (!preferLocal && location.hostname === "jwmao1.github.io" && src.startsWith("assets/videos/")) {
@@ -48,6 +48,11 @@ const videoPlaybackObserver = new IntersectionObserver((entries) => {
       visibleVideos.delete(video);
       clearPlayRetry(video);
       video.pause();
+      if (!video.closest(".hero-media") && video.dataset.src && video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) {
+        video.removeAttribute("src");
+        video.preload = "none";
+        video.load();
+      }
     }
   });
 }, { threshold: 0.05 });
@@ -93,7 +98,7 @@ function mediaCard(item, options = {}) {
 
   const placeholder = document.createElement("div");
   placeholder.className = "media-placeholder";
-  placeholder.innerHTML = `<span class="play-mark">▶</span><strong>${item.title || "Video result"}</strong><small>${item.src}</small>`;
+  placeholder.innerHTML = '<span class="play-mark">▶</span><strong>Video Results</strong>';
 
   video.addEventListener("loadeddata", () => {
     shell.classList.add("has-video");
